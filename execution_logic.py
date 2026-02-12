@@ -33,3 +33,6 @@ def inject_and_run(code_string):
             text=True, 
             timeout=5
         )
+        return result.stdout if result.stdout else result.stderr
+    except Exception as e:
+        return f"Error during execution: {str(e)}"

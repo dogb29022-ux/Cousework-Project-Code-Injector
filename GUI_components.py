@@ -8,3 +8,9 @@ def create_widgets(root, run_callback):
     # Header Label
     header = tk.Label(root, text="Python Code Injector", font=("Arial", 16, "bold"))
     header.pack(pady=10)
+
+    # Input Area (Where you type code)
+    tk.Label(root, text="Enter Python Code:").pack()
+    input_area = scrolledtext.ScrolledText(root, height=10, width=50)
+    input_area.pack(pady=5)
+    
