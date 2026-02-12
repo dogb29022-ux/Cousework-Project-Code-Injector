@@ -21,3 +21,7 @@ def inject_and_run(code_string):
     Saves the provided string as a python file and executes it.
     """
     temp_filename = "temp_script_exec.py"
+
+# Save the code to a temporary file
+    with open(temp_filename, "w") as f:
+        f.write(code_string)
