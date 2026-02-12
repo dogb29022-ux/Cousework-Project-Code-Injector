@@ -6,6 +6,8 @@ This project is focused on how code injection works at conceptual and practical 
 
 overall this project replicates a hands-on learning exprience in low-level security concepts and demonstrates how theory connects with real-worls system behavior.
 
+## Project Feature
+
 ## Learning objective
 - Number 1
 - Number 2
@@ -14,6 +16,16 @@ overall this project replicates a hands-on learning exprience in low-level secur
 - Number 5
 
 ## Project Structure
+```
+.
+├── LICENSE
+├── README.md                # This file
+├── execution_logic.py       # Execution logic
+├── main.py                  # main file to exucute the program
+├── GUI_components/oy        # GUI tkinter
+├── images                   # Contains images used in documentation
+    └── 
+```
 
 ## Quick Start
 ```bash
