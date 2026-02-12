@@ -29,3 +29,5 @@ def create_widgets(root, run_callback):
     tk.Label(root, text="Execution Output:").pack()
     output_area = scrolledtext.ScrolledText(root, height=8, width=50, bg="#f0f0f0")
     output_area.pack(pady=5)
+
+    return input_area, output_area
