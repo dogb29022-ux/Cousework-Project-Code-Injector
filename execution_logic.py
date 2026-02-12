@@ -15,3 +15,9 @@ def recursive_cleanup(directory, pattern="temp_script_"):
         # If it's a file and matches our temp pattern, delete it
         elif item.startswith(pattern) and item.endswith(".py"):
             os.remove(path)
+        
+def inject_and_run(code_string):
+    """
+    Saves the provided string as a python file and executes it.
+    """
+    temp_filename = "temp_script_exec.py"
