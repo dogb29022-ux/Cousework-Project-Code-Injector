@@ -12,9 +12,12 @@ def handle_execution(input_widget, output_widget):
     # 1. Get code from the UI
     user_code = input_widget.get("1.0", tk.END)
     # [TODO]
-    
+
 # Initialize the main tkinter window
 def start_app():
     pass
+
+if __name__=="__main__":
+    start_app()
 
 
