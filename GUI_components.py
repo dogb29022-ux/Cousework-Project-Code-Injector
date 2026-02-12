@@ -13,4 +13,14 @@ def create_widgets(root, run_callback):
     tk.Label(root, text="Enter Python Code:").pack()
     input_area = scrolledtext.ScrolledText(root, height=10, width=50)
     input_area.pack(pady=5)
-    
+
+    # Execution Button
+    # We use a lambda to pass the input_area data back to the main logic
+    run_btn = tk.Button(
+        root, 
+        text="Inject & Run", 
+        bg="green", 
+        fg="white", 
+        command=lambda: run_callback(input_area, output_area)
+    )
+    run_btn.pack(pady=10)
