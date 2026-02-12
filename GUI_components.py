@@ -24,3 +24,8 @@ def create_widgets(root, run_callback):
         command=lambda: run_callback(input_area, output_area)
     )
     run_btn.pack(pady=10)
+
+    # Output Area (Where results appear)
+    tk.Label(root, text="Execution Output:").pack()
+    output_area = scrolledtext.ScrolledText(root, height=8, width=50, bg="#f0f0f0")
+    output_area.pack(pady=5)
