@@ -25,3 +25,11 @@ def inject_and_run(code_string):
 # Save the code to a temporary file
     with open(temp_filename, "w") as f:
         f.write(code_string)
+
+    try:
+        # Run the injected code as a separate process
+        result = subprocess.run(
+            ["python", temp_filename],
+            text=True, 
+            timeout=5
+        )
