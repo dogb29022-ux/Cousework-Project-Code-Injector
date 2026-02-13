@@ -24,7 +24,16 @@ def handle_execution(input_widget, output_widget):
 
 # Initialize the main tkinter window
 def start_app():
-    pass
+   # Initialize the main Tkinter window
+    root = tk.Tk()
+    root.title("Python Injector Tool")
+    root.geometry("500x550")
+
+    # Build the GUI
+    gui_components.create_widgets(root, handle_execution)
+
+    # Start the event loop
+    root.mainloop()
 
 if __name__=="__main__":
     start_app()
