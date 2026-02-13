@@ -17,22 +17,30 @@ def recursive_cleanup(directory, pattern="temp_script_"):
             os.remove(path)
         
 def inject_and_run(code_string):
-    """
-    Saves the provided string as a python file and executes it.
-    """
+
     temp_filename = "temp_script_exec.py"
 
-# Save the code to a temporary file
     with open(temp_filename, "w") as f:
         f.write(code_string)
 
     try:
-        # Run the injected code as a separate process
         result = subprocess.run(
             ["python", temp_filename],
-            text=True, 
+            capture_output=True,
+            text=True,
             timeout=5
         )
-        return result.stdout if result.stdout else result.stderr
+
+        if result.stdout:
+            return result.stdout
+        elif result.stderr:
+            return result.stderr
+        else:
+            return "Execution finished. No output."
+
     except Exception as e:
         return f"Error during execution: {str(e)}"
+
+    finally:
+        if os.path.exists(temp_filename):
+            os.remove(temp_filename)
