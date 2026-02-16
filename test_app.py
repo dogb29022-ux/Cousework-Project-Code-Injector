@@ -1,0 +1,1 @@
+# This script file to test the application (unit testing)
