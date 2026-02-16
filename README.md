@@ -7,6 +7,11 @@ This project is focused on how code injection works at conceptual and practical 
 overall this project replicates a hands-on learning exprience in low-level security concepts and demonstrates how theory connects with real-worls system behavior.
 
 ## Project Feature
+- Number 1
+- Number 2
+- Number 3
+- Number 4
+- Number 5
 
 ## Learning objective
 - Number 1
