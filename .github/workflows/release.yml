@@ -1,0 +1,44 @@
+name: Auto Release on Version Tag
+
+# 1. Trigger the workflow only when a tag containing 'ver' is pushed
+on:
+  push:
+    tags:
+      - '*ver*'
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+    
+    # Permissions needed to create a release and upload artifacts
+    permissions:
+      contents: write
+
+    steps:
+      # 2. Check out the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 3. Set up Python (Optional but good for verification)
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      # 4. Install dependencies (Ensures your requirements.txt is valid)
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+
+      # 5. Create the GitHub Release
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          # This generates an automatic changelog based on your commit messages
+          generate_release_notes: true
+          # Marks the release as a draft if you want to check it first (set to false for instant release)
+          draft: false
+          prerelease: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
