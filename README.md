@@ -7,11 +7,11 @@ This project is focused on how code injection works at conceptual and practical 
 overall this project replicates a hands-on learning exprience in low-level security concepts and demonstrates how theory connects with real-worls system behavior.
 
 ## Project Feature
-- Number 1
-- Number 2
-- Number 3
-- Number 4
-- Number 5
+- Utilizes the subprocess module to spawn independent child processes for script execution, preventing user-injected code from crashing or compromising the main application thread.
+- Implements an automated "Write-Execute-Purge" workflow that generates unique temporary script files and ensures their immediate deletion post-execution for a zero-footprint operation.
+- Captures and redirects stdout and stderr through OS pipes, allowing the GUI to display standard output and complex Python tracebacks in a unified, readable interface.
+- Engineered with a strict separation of concerns, decoupling the Tkinter-based user interface from the backend execution and cleanup modules for high maintainability.
+- Includes a Docker configuration using a debian-slim base image to provide a consistent, platform-independent, and secure sandboxed environment for code testing.
 
 ## Learning objective
 - Developed a procedural architecture that separates GUI components from execution logic to improve code readability and maintenance.
