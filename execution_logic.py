@@ -28,7 +28,7 @@ def inject_and_run(code_string):
             ["python", temp_filename],
             capture_output=True,
             text=True,
-            timeout=5
+            timeout=50
         )
 
         if result.stdout:
