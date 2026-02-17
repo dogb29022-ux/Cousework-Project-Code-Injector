@@ -14,11 +14,11 @@ overall this project replicates a hands-on learning exprience in low-level secur
 - Number 5
 
 ## Learning objective
-- Number 1
-- Number 2
-- Number 3
-- Number 4
-- Number 5
+- Developed a procedural architecture that separates GUI components from execution logic to improve code readability and maintenance.
+- Implemented real-time I/O operations to transform GUI text input into executable temporary Python scripts.
+- Integrated the subprocess module to run injected code in a child process, protecting the main application from crashes.
+- Engineered an automated lifecycle system that purges all temporary files after execution to maintain a zero-footprint environment
+- Configured a Docker environment to ensure the tool remains portable and secure within an isolated Debian-slim container
 
 ## Project Structure
 ```
